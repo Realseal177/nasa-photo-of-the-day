@@ -9,6 +9,7 @@ import styled from "styled-components";
 import theme from './theme';
 
 const StyledDetails = styled.div`
+  background-color: ${props => props.theme.primaryColor};
   h1 {
     color: ${props => props.theme.white}
   }
