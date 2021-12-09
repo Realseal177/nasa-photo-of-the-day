@@ -5,6 +5,15 @@ import Photo from "./Photo";
 import PhotoTitle from "./PhotoTitle";
 import AboutPhoto from "./AboutPhoto";
 
+import styled from "styled-components";
+import theme from './theme';
+
+const StyledDetails = styled.div`
+  h1 {
+    color: ${props => props.theme.white}
+  }
+`
+
 function App() {
   const [ photo, setPhoto ] = useState(null);
 
@@ -23,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <StyledDetails theme={theme} className="App">
       <h1>Nasa Photo Of The Day</h1>
       {
         photo && <PhotoTitle photo={photo}/>
@@ -34,7 +43,7 @@ function App() {
       {
         photo && <AboutPhoto photo={photo}/>
       }
-    </div>
+    </StyledDetails>
   );
 }
 
